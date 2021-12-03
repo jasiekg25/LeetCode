@@ -2,3 +2,10 @@
 /project/target/
 /target/
 /target/scala-2.13/classes/
+
+# intellij idea
+*.log
+*.iml
+*.ipr
+*.iws
+.idea
