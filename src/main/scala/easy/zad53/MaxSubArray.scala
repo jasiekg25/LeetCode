@@ -38,8 +38,8 @@ object MaxSubArray {
     for(idx <- nums.indices){
       max_ending_here = max_ending_here + nums(idx)
       if(max_so_far < max_ending_here) max_so_far = max_ending_here
-      else if (max_ending_here < 0) max_ending_here = 0
-      else max_so_far // can be any action -> scala lang specific need solution like this
+
+      if (max_ending_here < 0) max_ending_here = 0
     }
     max_so_far
   }
