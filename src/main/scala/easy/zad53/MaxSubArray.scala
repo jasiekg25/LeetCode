@@ -1,5 +1,7 @@
 package easy.zad53
 
+import scala.math._
+
 object MaxSubArray {
   def main(args: Array[String]): Unit = {
     val nums1 = Array(-2,1,-3,4,-1,2,1,-5,4)
@@ -36,10 +38,8 @@ object MaxSubArray {
     var max_ending_here = 0
 
     for(idx <- nums.indices){
-      max_ending_here = max_ending_here + nums(idx)
-      if(max_so_far < max_ending_here) max_so_far = max_ending_here
-
-      if (max_ending_here < 0) max_ending_here = 0
+      max_ending_here = max(nums(idx), nums(idx) + max_ending_here)
+      max_so_far = max(max_ending_here, max_so_far)
     }
     max_so_far
   }
